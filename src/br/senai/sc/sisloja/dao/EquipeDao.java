@@ -1,6 +1,5 @@
 package br.senai.sc.sisloja.dao;
 
-
 import br.senai.sc.sisGestao.modelo.CadastrarEquipe;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,7 +25,7 @@ public class EquipeDao extends ConnectionFactory {
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
             st.setString(1, eq.getNome());
             st.setString(2, eq.getDescricao());
-            
+
             st.execute();
             st.close();
         }
@@ -54,9 +53,10 @@ public class EquipeDao extends ConnectionFactory {
         String sql = "update equipe set nome = ?, descricao = ? where codEquipe = ?";
 
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
-            st.setString(1, eq.getNome());
-            st.setString(2, eq.getDescricao());
-  
+            st.setString(1, eq.getAtualizarNome());
+            st.setString(2, eq.getAtualizarDescricao());
+            st.setInt(3, eq.getCodEquipe());
+
             st.execute();
             st.close();
         }
@@ -76,10 +76,10 @@ public class EquipeDao extends ConnectionFactory {
 
             while (rs.next()) {
                 CadastrarEquipe e = new CadastrarEquipe();
-                e.setNome("nome");
-                e.setDescricao("descricao");
-      
 
+                e.setCodEquipe(rs.getInt("codEquipe"));
+                e.setNome(rs.getString("nome"));
+                e.setDescricao(rs.getString("descricao"));
                 equipes.add(e);
             }
 
@@ -92,7 +92,7 @@ public class EquipeDao extends ConnectionFactory {
         return equipes;
     }
 
-        public CadastrarEquipe getEquipe(int codEquipe) throws SQLException {
+    public CadastrarEquipe getEquipe(int codEquipe) throws SQLException {
         String sql = "select * from equipe where codEquipe = ?";
         CadastrarEquipe equipe = null;
 
@@ -101,8 +101,9 @@ public class EquipeDao extends ConnectionFactory {
             try (ResultSet rs = st.executeQuery()) {
                 if (rs.next()) {
                     CadastrarEquipe e = new CadastrarEquipe();
-                    e.setNome("nome");
-                    e.setDescricao("descricao");
+                    e.setCodEquipe(rs.getInt("codEquipe"));
+                    e.setNome(rs.getString("nome"));
+                    e.setDescricao(rs.getString("descricao"));
                 }
             }
             st.close();
