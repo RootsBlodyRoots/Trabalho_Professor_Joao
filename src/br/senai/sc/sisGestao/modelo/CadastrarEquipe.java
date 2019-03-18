@@ -8,6 +8,8 @@ public class CadastrarEquipe {
     protected String atualizarNome;
     protected String atualizarDescricao;
     protected int codigoEquipe;
+    protected int   agenda_idagenda;
+    
     
     public void setCodEquipe(int cod){
         this.codigoEquipe = cod;
@@ -46,6 +48,14 @@ public class CadastrarEquipe {
     
     public String getAtualizarDescricao(){
         return this.atualizarDescricao;
+    }
+
+    public int getAgenda_idagenda() {
+        return agenda_idagenda;
+    }
+
+    public void setAgenda_idagenda(int agenda_idagenda) {
+        this.agenda_idagenda = agenda_idagenda;
     }
    
     

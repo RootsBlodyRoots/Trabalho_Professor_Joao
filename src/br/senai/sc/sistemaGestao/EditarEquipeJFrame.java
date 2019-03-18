@@ -171,6 +171,7 @@ public class EditarEquipeJFrame extends javax.swing.JFrame {
         String eNome = editarNome.getText();
         String eDescricao = editarDescricao.getText();
         String cod = jCodEquipe.getText();
+        
 
         int codEquipe = Integer.parseInt(cod);
 
