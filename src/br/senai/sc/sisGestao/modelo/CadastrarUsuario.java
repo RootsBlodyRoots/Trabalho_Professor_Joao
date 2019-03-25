@@ -22,8 +22,6 @@ public class CadastrarUsuario {
     }
 
     public int getColaborador() {
-        String sqlCol = "select codColaborador from colaborador";
-        System.out.println(sqlCol);
         return this.cod;
     }
 
@@ -32,8 +30,6 @@ public class CadastrarUsuario {
     }
 
     public int getEquipe() {
-        String sql = "SELECT codEquipe from equipe";
-        System.out.println(sql);
         return equipe;
     }
 

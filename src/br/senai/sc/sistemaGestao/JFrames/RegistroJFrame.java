@@ -96,7 +96,7 @@ public class RegistroJFrame extends javax.swing.JFrame {
             }
         });
 
-        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Selecione", "Colaborador", "Gestor"}));
+        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Selecione", "Gestor"}));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel8.setText("Registro de Usuário");

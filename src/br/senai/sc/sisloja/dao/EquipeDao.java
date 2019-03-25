@@ -80,7 +80,7 @@ public class EquipeDao extends ConnectionFactory {
 
                 e.setCodEquipe(rs.getInt("codEquipe"));
                 e.setNome(rs.getString("nome"));
-                e.setDescricao(rs.getString("descricao"));
+                e.setDescricao(rs.getString("objetivo"));
                 equipes.add(e);
             }
 

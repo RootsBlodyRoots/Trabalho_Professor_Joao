@@ -60,13 +60,14 @@ public class ColaboradorDao extends ConnectionFactory {
 
     public void alterar(CadastrarUsuario col) throws SQLException {
 
-        String sql = "update colaborador set tipo = ?, usuario = ?, senha = ?, email= ? where codColaborador = ?";
+        String sql = "update colaborador set tipo = ?, usuario = ?, senha = ?, email = ? where codColaborador = ?";
 
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
             st.setString(1, col.getTipo());
             st.setString(2, col.getUsuario());
             st.setString(3, col.getSenha());
             st.setString(4, col.getEmail());
+            st.setInt(5, col.getColaborador());
             
             st.execute();
             st.close();
@@ -88,12 +89,16 @@ public class ColaboradorDao extends ConnectionFactory {
             while (rs.next()) {
                 
                 CadastrarUsuario c = new CadastrarUsuario();
-                c.setTipo("tipo");
-                c.setUsuario("usuario");
-                c.setSenha("senha");
-                c.setNome("nome");
-                c.setSobrenome("sobrenome");
-                c.setEmail("email");
+                
+                c.setColaborador(rs.getInt("codColaborador"));
+                c.setTipo(rs.getString("tipo"));
+                c.setUsuario(rs.getString("usuario"));
+                c.setSenha(rs.getString("senha"));
+                c.setNome(rs.getString("nome"));
+                c.setSobrenome(rs.getString("sobrenome"));
+                c.setEmail(rs.getString("email"));
+                c.setEquipe(rs.getInt("Equipe_codEquipe"));
+           
                 
                 colaboradores.add(c);
             }
@@ -122,13 +127,15 @@ public class ColaboradorDao extends ConnectionFactory {
                 if (rs.next()) {
                     CadastrarUsuario c = new CadastrarUsuario();
                     
-                    c.setTipo("tipo");
-                    c.setUsuario("usuario");
-                    c.setSenha("senha");
-                    c.setNome("nome");
-                    c.setSobrenome("sobrenome");
-                    c.setEmail("email");
-                }
+                    c.setColaborador(rs.getInt("codColaborador"));
+                    c.setTipo(rs.getString("tipo"));
+                    c.setUsuario(rs.getString("usuario"));
+                    c.setSenha(rs.getString("senha"));
+                    c.setNome(rs.getString("nome"));
+                    c.setSobrenome(rs.getString("sobrenome"));
+                    c.setEmail(rs.getString("email"));
+                    c.setEquipe(rs.getInt("Equipe_codEquipe"));
+                  }
             }
             st.close();
         }
