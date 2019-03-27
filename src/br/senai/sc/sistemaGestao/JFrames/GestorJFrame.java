@@ -52,6 +52,7 @@ public class GestorJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         buttonListarEquipe = new javax.swing.JButton();
         buttonListarColaborador = new javax.swing.JButton();
+        buttonTarefaC = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jVoltar = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -137,12 +138,32 @@ public class GestorJFrame extends javax.swing.JFrame {
             }
         });
 
+        buttonTarefaC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonTarefaC.setText("Cadastrar Tarefa");
+        buttonTarefaC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonTarefaCMouseClicked(evt);
+            }
+        });
+        buttonTarefaC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTarefaCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelMenuLayout = new javax.swing.GroupLayout(painelMenu);
         painelMenu.setLayout(painelMenuLayout);
         painelMenuLayout.setHorizontalGroup(
             painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelMenuLayout.createSequentialGroup()
                 .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelMenuLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel1)
+                        .addGap(166, 166, 166)
+                        .addComponent(jLabel2)
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel3))
                     .addGroup(painelMenuLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -157,12 +178,8 @@ public class GestorJFrame extends javax.swing.JFrame {
                             .addComponent(buttonListarEquipe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(buttonListarColaborador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(painelMenuLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel1)
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel2)
-                        .addGap(156, 156, 156)
-                        .addComponent(jLabel3)))
+                        .addContainerGap()
+                        .addComponent(buttonTarefaC, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(313, Short.MAX_VALUE))
         );
         painelMenuLayout.setVerticalGroup(
@@ -174,16 +191,20 @@ public class GestorJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonCadastro)
-                    .addComponent(buttonEditarEquipe, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonListarEquipe, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonListarEquipe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonCadastro)
+                        .addComponent(buttonEditarEquipe, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonCadastroEquipe)
-                    .addComponent(buttonEditarColaborador)
-                    .addComponent(buttonListarColaborador))
-                .addGap(300, 300, 300))
+                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonListarColaborador)
+                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonCadastroEquipe)
+                        .addComponent(buttonEditarColaborador)))
+                .addGap(18, 18, 18)
+                .addComponent(buttonTarefaC)
+                .addGap(259, 259, 259))
         );
 
         jVoltar.setText("voltar");
@@ -279,6 +300,14 @@ public class GestorJFrame extends javax.swing.JFrame {
         this.cl.show(painelPrincipal, "ListarColaborador");
     }//GEN-LAST:event_buttonListarColaboradorMouseClicked
 
+    private void buttonTarefaCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTarefaCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonTarefaCActionPerformed
+
+    private void buttonTarefaCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonTarefaCMouseClicked
+        
+    }//GEN-LAST:event_buttonTarefaCMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -321,6 +350,7 @@ public class GestorJFrame extends javax.swing.JFrame {
     private javax.swing.JButton buttonEditarEquipe;
     private javax.swing.JButton buttonListarColaborador;
     private javax.swing.JButton buttonListarEquipe;
+    private javax.swing.JButton buttonTarefaC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

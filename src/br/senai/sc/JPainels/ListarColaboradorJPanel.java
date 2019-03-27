@@ -5,11 +5,8 @@
  */
 package br.senai.sc.JPainels;
 
-import br.senai.sc.sisGestao.modelo.CadastrarEquipe;
 import br.senai.sc.sisGestao.modelo.CadastrarUsuario;
 import br.senai.sc.sisloja.dao.ColaboradorDao;
-import br.senai.sc.sisloja.dao.EquipeDao;
-import br.senai.sc.sistemaGestao.ListarEquipeJFrame;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;

@@ -7,7 +7,6 @@ package br.senai.sc.JPainels;
 
 import br.senai.sc.sisGestao.modelo.CadastrarEquipe;
 import br.senai.sc.sisloja.dao.EquipeDao;
-import br.senai.sc.sistemaGestao.ListarEquipeJFrame;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +93,7 @@ public class ListarEquipeJPanel extends javax.swing.JPanel {
         } catch (SQLException ex) {
             String msg = "Ocorreu um erro ao obter os clientes do banco de dados!";
             JOptionPane.showMessageDialog(null, msg);
-            Logger.getLogger(ListarEquipeJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListarEquipeJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
