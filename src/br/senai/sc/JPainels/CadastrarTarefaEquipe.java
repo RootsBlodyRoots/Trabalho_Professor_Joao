@@ -7,7 +7,6 @@ package br.senai.sc.JPainels;
 
 import br.senai.sc.sisGestao.modelo.CadastrarTarefa;
 import br.senai.sc.sisloja.dao.AgendaDao;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
@@ -16,13 +15,13 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Kathu
+ * @author Aluno
  */
-public class CadastroTarefas extends javax.swing.JPanel {
+public class CadastrarTarefaEquipe extends javax.swing.JPanel {
 
     AgendaDao ad = new AgendaDao();
     
-    public CadastroTarefas() {
+    public CadastrarTarefaEquipe() {
         initComponents();
     }
 
@@ -35,22 +34,16 @@ public class CadastroTarefas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        cpTitulo = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         cpDes = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         cpCod = new javax.swing.JTextField();
         buttonRegistrar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        cpTitulo = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         cpCalendario = new com.toedter.calendar.JCalendar();
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Titulo");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Descrição da tarefa");
 
         cpDes.setColumns(20);
         cpDes.setRows(5);
@@ -67,6 +60,12 @@ public class CadastroTarefas extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Data de entrega");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Titulo");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Descrição da tarefa");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,7 +92,7 @@ public class CadastroTarefas extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(cpCod, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,29 +124,31 @@ public class CadastroTarefas extends javax.swing.JPanel {
 
     private void buttonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonRegistrarMouseClicked
         CadastrarTarefa ct = new CadastrarTarefa();
-        
+
         String titulo = cpTitulo.getText();
         String desc = cpDes.getText();
         String cod = cpCod.getText();
-        
+
         SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd");
         String dataTxt = formatador.format(cpCalendario.getDate());
-        
-        
+
         int codInt = Integer.parseInt(cod);
-       
+
         ct.setTitulo(titulo);
         ct.setDescricao(desc);
         ct.setData(dataTxt);
-        ct.setCodCol(codInt);
+        ct.setCodEq(codInt);
+    
         try {
-            ad.inserir(ct);
-            JOptionPane.showMessageDialog(null, "Tarefa cadastrada");
+            ad.inserirTarefaEquipe(ct);
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro");
-            Logger.getLogger(CadastroTarefas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CadastrarTarefaEquipe.class.getName()).log(Level.SEVERE, null, ex);
         }
             
+            JOptionPane.showMessageDialog(null, "Tarefa cadastrada");
+   
+       
+
     }//GEN-LAST:event_buttonRegistrarMouseClicked
 
 

@@ -61,7 +61,6 @@ public class AlterarEquipe extends javax.swing.JPanel {
             }
         });
 
-        jCodEquipe.setText("jTextField1");
         jCodEquipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCodEquipeActionPerformed(evt);
@@ -70,7 +69,11 @@ public class AlterarEquipe extends javax.swing.JPanel {
 
         jLabel4.setText("Código da equipe");
 
-        editarNome.setText("nome :)");
+        editarNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarNomeActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Editar Equipe");
@@ -96,7 +99,7 @@ public class AlterarEquipe extends javax.swing.JPanel {
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel4)
-                                    .addComponent(jCodEquipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jCodEquipe, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
@@ -162,6 +165,10 @@ public class AlterarEquipe extends javax.swing.JPanel {
     private void jCodEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCodEquipeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCodEquipeActionPerformed
+
+    private void editarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarNomeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
