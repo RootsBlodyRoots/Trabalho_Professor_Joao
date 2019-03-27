@@ -5,7 +5,6 @@
  */
 package br.senai.sc.Principal;
 
-import br.senai.sc.sisGestao.modelo.CadastrarTarefa;
 import br.senai.sc.sistemaGestao.JFrames.LoginJFrame;
 
 public class Principal {
@@ -14,7 +13,6 @@ public class Principal {
         LoginJFrame login = new LoginJFrame();
         login.setVisible(true);
         
-        CadastrarTarefa ct = new CadastrarTarefa();
-        ct.getData();
+        
     }
 }

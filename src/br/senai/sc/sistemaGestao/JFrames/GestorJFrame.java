@@ -7,6 +7,7 @@ package br.senai.sc.sistemaGestao.JFrames;
 
 import br.senai.sc.JPainels.AlterarEquipe;
 import br.senai.sc.JPainels.CadastrarEquipeJPanel;
+import br.senai.sc.JPainels.CadastroTarefas;
 import br.senai.sc.JPainels.EditarColaborador;
 import br.senai.sc.JPainels.ListarColaboradorJPanel;
 import br.senai.sc.JPainels.ListarEquipeJPanel;
@@ -305,7 +306,9 @@ public class GestorJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonTarefaCActionPerformed
 
     private void buttonTarefaCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonTarefaCMouseClicked
-        
+        CadastroTarefas ct = new CadastroTarefas();
+         painelPrincipal.add(ct, "CadastroTarefas");
+        this.cl.show(painelPrincipal, "CadastroTarefas");
     }//GEN-LAST:event_buttonTarefaCMouseClicked
 
     /**

@@ -6,6 +6,13 @@
 package br.senai.sc.JPainels;
 
 import br.senai.sc.sisGestao.modelo.CadastrarTarefa;
+import br.senai.sc.sisloja.dao.AgendaDao;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,9 +20,8 @@ import br.senai.sc.sisGestao.modelo.CadastrarTarefa;
  */
 public class CadastroTarefas extends javax.swing.JPanel {
 
-    /**
-     * Creates new form CadastroTarefas
-     */
+    AgendaDao ad = new AgendaDao();
+    
     public CadastroTarefas() {
         initComponents();
     }
@@ -37,6 +43,8 @@ public class CadastroTarefas extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         cpCod = new javax.swing.JTextField();
         buttonRegistrar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        cpCalendario = new com.toedter.calendar.JCalendar();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Titulo");
@@ -57,6 +65,9 @@ public class CadastroTarefas extends javax.swing.JPanel {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("Data de entrega");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -68,19 +79,18 @@ public class CadastroTarefas extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(cpTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(cpCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonRegistrar)
+                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(buttonRegistrar)
-                                    .addComponent(cpCod, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(49, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addComponent(cpCod, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,9 +107,13 @@ public class CadastroTarefas extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cpCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cpCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(buttonRegistrar)
-                .addGap(47, 47, 47))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -110,22 +124,37 @@ public class CadastroTarefas extends javax.swing.JPanel {
         String desc = cpDes.getText();
         String cod = cpCod.getText();
         
+        SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd");
+        String dataTxt = formatador.format(cpCalendario.getDate());
         
-        
+        System.out.println(dataTxt);
+      
+      
         int codInt = Integer.parseInt(cod);
-        
-        
+       
+        ct.setTitulo(titulo);
+        ct.setDescricao(desc);
+        ct.setCodCol(codInt);
+        try {
+            ad.inserir(ct);
+            JOptionPane.showMessageDialog(null, "Tarefa cadastrada");
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroTarefas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
     }//GEN-LAST:event_buttonRegistrarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonRegistrar;
+    private com.toedter.calendar.JCalendar cpCalendario;
     private javax.swing.JTextField cpCod;
     private javax.swing.JTextArea cpDes;
     private javax.swing.JTextField cpTitulo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

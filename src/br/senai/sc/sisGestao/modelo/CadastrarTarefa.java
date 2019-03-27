@@ -6,14 +6,31 @@
 package br.senai.sc.sisGestao.modelo;
 
 import java.sql.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 public class CadastrarTarefa {
 
     private String titulo;
     private String descricao;
     private int codTarefa;
+    private Date data;
+    private int codCol;
+    private int codEq;
+
+    public int getCodCol() {
+        return codCol;
+    }
+
+    public void setCodCol(int codCol) {
+        this.codCol = codCol;
+    }
+
+    public int getCodEq() {
+        return codEq;
+    }
+
+    public void setCodEq(int codEq) {
+        this.codEq = codEq;
+    }
 
     public int getCodTarefa() {
         return codTarefa;
@@ -23,18 +40,10 @@ public class CadastrarTarefa {
         this.codTarefa = codTarefa;
     }
 
-    public void setData(){
-        getData();
+    public void setData(Date d){
+        this.data = d;
     }
-    
-    
-    public Date getData() {
-        Calendar calendar = new GregorianCalendar();
-        Date date = new Date(System.currentTimeMillis());
-        calendar.setTime(date);
-        return (Date) calendar.getTime();
-    }
-
+ 
     public String getTitulo() {
         return titulo;
     }
