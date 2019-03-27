@@ -20,7 +20,7 @@ public class EquipeDao extends ConnectionFactory {
     public void inserir(CadastrarEquipe eq) throws SQLException {
 
         String sql = "insert into equipe "
-                + "(nome, descricao)"
+                + "(nome, objetivo)"
                 + "values (?, ?);";
 
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
@@ -51,7 +51,7 @@ public class EquipeDao extends ConnectionFactory {
 
     public void alterar(CadastrarEquipe eq) throws SQLException {
 
-        String sql = "update equipe set nome = ?, descricao = ? where codEquipe = ?";
+        String sql = "update equipe set nome = ?, Objetivo = ? where codEquipe = ?";
 
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
             st.setString(1, eq.getAtualizarNome());
@@ -104,7 +104,7 @@ public class EquipeDao extends ConnectionFactory {
                     CadastrarEquipe e = new CadastrarEquipe();
                     e.setCodEquipe(rs.getInt("codEquipe"));
                     e.setNome(rs.getString("nome"));
-                    e.setDescricao(rs.getString("descricao"));
+                    e.setDescricao(rs.getString("objetivo"));
                 }
             }
             st.close();

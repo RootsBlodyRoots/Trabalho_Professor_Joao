@@ -19,13 +19,13 @@ public class AgendaDao extends ConnectionFactory {
 
     public void inserir(CadastrarTarefa taf) throws SQLException {
 
-        String sql = "insert into agenda_de_tarefas"
-                + "(data_criacao, titulo, descricao, Colaborador_codColaborador)"
-                + "values (curdate(), ?, ?, ?);";
+        String sql = "insert into agenda"
+                + "(data_criacao, data_entrega, titulo, descricao, Colaborador_codColaborador)"
+                + "values (curdate(), ?, ?, ?, ?);";
   
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
-            st.setString(1, taf.getTitulo());
-            st.setString(2, taf.getDescricao());
+            st.setString(3, taf.getTitulo());
+            st.setString(4, taf.getDescricao());
     
             st.execute();
             st.close();
@@ -39,7 +39,7 @@ public class AgendaDao extends ConnectionFactory {
 
     public void eliminar(int codigoC) throws SQLException {
 
-        String sql = "delete from agenda_de_tarefas where codTarefa = ?";
+        String sql = "delete from agenda where codTarefa = ?";
 
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
             st.setInt(1, codigoC);
@@ -54,7 +54,7 @@ public class AgendaDao extends ConnectionFactory {
 
     public void alterar(CadastrarTarefa taf) throws SQLException {
 
-        String sql = "update agenda_de_tarefa set titulo = ?, descricao = ?,  where codTarefa = ?";
+        String sql = "update agenda set titulo = ?, descricao = ?,  where codTarefa = ?";
 
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
             st.setString(1, taf.getTitulo());
@@ -70,7 +70,7 @@ public class AgendaDao extends ConnectionFactory {
     }
 
     public List<CadastrarTarefa> listarTarefas() throws SQLException {
-        String sql = "select * from agenda_de_tarefa";
+        String sql = "select * from agenda";
         List<CadastrarTarefa> tarefas = null;
 
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
@@ -84,6 +84,7 @@ public class AgendaDao extends ConnectionFactory {
                 
                 t.setCodTarefa(rs.getInt("codTarefa"));
                 t.setData(rs.getDate("data_criacao"));
+                t.setData(rs.getDate("data_entrega"));
                 t.setTitulo(rs.getString("titulo"));
                 t.setDescricao(rs.getString("descricao"));
       
@@ -101,7 +102,7 @@ public class AgendaDao extends ConnectionFactory {
 
     public CadastrarTarefa getTarefa(int codTarefa) throws SQLException {
         
-        String sql = "select * from agenda_de_tarefas where codTarefa = ?";
+        String sql = "select * from agenda where codTarefa = ?";
         CadastrarTarefa tarefa = null;
 
         try (PreparedStatement st = this.con.prepareStatement(sql)){
@@ -116,6 +117,7 @@ public class AgendaDao extends ConnectionFactory {
                     
                     t.setCodTarefa(rs.getInt("codTarefa"));
                     t.setData(rs.getDate("data_criacao"));
+                    t.setData(rs.getDate("data_entrega"));
                     t.setTitulo(rs.getString("titulo"));
                     t.setDescricao(rs.getString("descricao"));
                   }
