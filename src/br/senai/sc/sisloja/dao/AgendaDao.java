@@ -124,4 +124,36 @@ public class AgendaDao extends ConnectionFactory {
         return tarefas;
     }
 
+       public List<CadastrarTarefa> listarTarefasCol() throws SQLException {
+        String sql = "select * from agenda where Colaborador_codColaborador = ?";
+        List<CadastrarTarefa> tarefas = null;
+
+        try (PreparedStatement st = this.con.prepareStatement(sql)) {
+            ResultSet rs = st.executeQuery();
+
+            tarefas = new ArrayList<CadastrarTarefa>();
+
+            while (rs.next()) {
+
+                CadastrarTarefa t = new CadastrarTarefa();
+
+                t.setCodTarefa(rs.getInt("codTarefa"));
+                t.setDataCriacao(rs.getString("data_criacao"));
+                t.setTitulo(rs.getString("titulo"));
+                t.setDescricao(rs.getString("descricao"));
+                t.setData(rs.getString("data_entrega"));
+                t.setCodCol(rs.getInt("Colaborador_codColaborador"));
+                
+
+                tarefas.add(t);
+            }
+
+            rs.close();
+            st.close();
+
+        }
+
+        this.con.close();
+        return tarefas;
+    }
 }

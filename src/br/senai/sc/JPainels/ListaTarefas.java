@@ -81,7 +81,7 @@ public class ListaTarefas extends javax.swing.JPanel {
 
             DefaultTableModel model = (DefaultTableModel) tblTarefa.getModel();
             List<Object> lista = new ArrayList<Object>();
-
+          
             for (int i = 0; i < listarTarefa.size(); i++) {
                 CadastrarTarefa ct = listarTarefa.get(i);
                 lista.add(new Object[]{ct.getCodTarefa(), ct.getDataCriacao(), ct.getTitulo(),

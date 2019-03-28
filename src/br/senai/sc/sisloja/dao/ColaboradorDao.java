@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ColaboradorDao extends ConnectionFactory {
 
@@ -143,5 +145,18 @@ public class ColaboradorDao extends ConnectionFactory {
         this.con.close();
         return colaborador;
     }
+    public void consultaC (){
+    String sql = "select Colaborador_codColaborador from agenda  ";
+    
+    CadastrarUsuario consC = new CadastrarUsuario();
+        try (PreparedStatement st = this.con.prepareStatement(sql)){
+            
+                    
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(ColaboradorDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+}
 
 }
