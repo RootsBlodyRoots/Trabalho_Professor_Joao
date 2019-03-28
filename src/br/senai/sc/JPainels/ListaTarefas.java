@@ -6,9 +6,7 @@
 package br.senai.sc.JPainels;
 
 import br.senai.sc.sisGestao.modelo.CadastrarTarefa;
-import br.senai.sc.sisGestao.modelo.CadastrarUsuario;
 import br.senai.sc.sisloja.dao.AgendaDao;
-import br.senai.sc.sisloja.dao.ColaboradorDao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,11 +46,11 @@ public class ListaTarefas extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Código da Tarefa", "Data de criação", "Titulo", "Descrição", "Data de entrega", "Código do colaborador atribuido"
+                "Código da Tarefa", "Data de criação", "Titulo", "Descrição", "Data de entrega", "Código do colaborador atribuido", "Código da equipe"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -65,7 +63,7 @@ public class ListaTarefas extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollTarefa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
+            .addComponent(scrollTarefa, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +85,7 @@ public class ListaTarefas extends javax.swing.JPanel {
             for (int i = 0; i < listarTarefa.size(); i++) {
                 CadastrarTarefa ct = listarTarefa.get(i);
                 lista.add(new Object[]{ct.getCodTarefa(), ct.getDataCriacao(), ct.getTitulo(),
-                ct.getDescricao(), ct.getData(), ct.getCodCol()});
+                ct.getDescricao(), ct.getData(), ct.getCodCol(), ct.getCodEq()});
             }
 
             for (int idx = 0; idx < lista.size(); idx++) {

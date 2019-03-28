@@ -5,16 +5,9 @@
  */
 package br.senai.sc.sistemaGestao.JFrames;
 
-import br.senai.sc.JPainels.AlterarEquipe;
+
 import br.senai.sc.JPainels.CadastrarEquipeJPanel;
-import br.senai.sc.JPainels.CadastrarTarefaEquipe;
 import br.senai.sc.JPainels.CadastroTarefas;
-import br.senai.sc.JPainels.EditarColaborador;
-import br.senai.sc.JPainels.EditarTarefa;
-import br.senai.sc.JPainels.ListaTarefas;
-import br.senai.sc.JPainels.ListarColaboradorJPanel;
-import br.senai.sc.JPainels.ListarEquipeJPanel;
-import br.senai.sc.JPainels.RegistroColaboradorJPanel;
 import java.awt.CardLayout;
 
 
@@ -44,213 +37,177 @@ public class GestorJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         painelPrincipal = new javax.swing.JPanel();
-        painelMenu = new javax.swing.JPanel();
-        buttonCadastro = new javax.swing.JButton();
-        buttonCadastroEquipe = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        buttonEditarEquipe = new javax.swing.JButton();
-        buttonEditarColaborador = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        buttonListarEquipe = new javax.swing.JButton();
-        buttonListarColaborador = new javax.swing.JButton();
-        buttonTarefaC = new javax.swing.JButton();
-        ButtonEditarTarefa = new javax.swing.JButton();
-        ButtonListar = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jPanel1 = new javax.swing.JPanel();
+        buttonRemoveEquipe2 = new javax.swing.JButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        buttonRemoveCol2 = new javax.swing.JButton();
+        ButtonListar2 = new javax.swing.JToggleButton();
+        buttonRemoveTarefa2 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        buttonTarefaC2 = new javax.swing.JButton();
+        ButtonEditarTarefa2 = new javax.swing.JButton();
+        buttonListarColaborador2 = new javax.swing.JButton();
+        buttonListarEquipe2 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        buttonEditarColaborador2 = new javax.swing.JButton();
+        buttonEditarEquipe2 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        buttonCadastroEquipe2 = new javax.swing.JButton();
+        buttonCadastro2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jVoltar = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         painelPrincipal.setLayout(new java.awt.CardLayout());
 
-        buttonCadastro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        buttonCadastro.setText("Cadastrar Colaborador");
-        buttonCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonRemoveEquipe2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonRemoveEquipe2.setText("Remover Equipe");
+
+        jToggleButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jToggleButton3.setText("Cadastrar Tarefa para Equipe");
+
+        buttonRemoveCol2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonRemoveCol2.setText("Remover Colaborador");
+
+        ButtonListar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ButtonListar2.setText("Listar Tarefas");
+
+        buttonRemoveTarefa2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonRemoveTarefa2.setText("Remover Tarefa");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel12.setText("Remover");
+
+        buttonTarefaC2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonTarefaC2.setText("Cadastrar Tarefa");
+        buttonTarefaC2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonCadastroMouseClicked(evt);
-            }
-        });
-        buttonCadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCadastroActionPerformed(evt);
+                buttonTarefaC2MouseClicked(evt);
             }
         });
 
-        buttonCadastroEquipe.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        buttonCadastroEquipe.setText("Cadastrar Equipe");
-        buttonCadastroEquipe.addMouseListener(new java.awt.event.MouseAdapter() {
+        ButtonEditarTarefa2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ButtonEditarTarefa2.setText("Editar Tarefa");
+
+        buttonListarColaborador2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonListarColaborador2.setText("Listar Colaboradores");
+
+        buttonListarEquipe2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonListarEquipe2.setText("Listar Equipe");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel11.setText("Listar");
+
+        buttonEditarColaborador2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonEditarColaborador2.setText("Editar Colaborador");
+
+        buttonEditarEquipe2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonEditarEquipe2.setText("Editar Equipe");
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel10.setText("Editar");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setText("Cadastro");
+
+        buttonCadastroEquipe2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonCadastroEquipe2.setText("Cadastrar Equipe");
+        buttonCadastroEquipe2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonCadastroEquipeMouseClicked(evt);
-            }
-        });
-        buttonCadastroEquipe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCadastroEquipeActionPerformed(evt);
+                buttonCadastroEquipe2MouseClicked(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Cadastro");
+        buttonCadastro2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        buttonCadastro2.setText("Cadastrar Colaborador");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("Editar");
-
-        buttonEditarEquipe.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        buttonEditarEquipe.setText("Editar Equipe");
-        buttonEditarEquipe.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonEditarEquipeMouseClicked(evt);
-            }
-        });
-        buttonEditarEquipe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonEditarEquipeActionPerformed(evt);
-            }
-        });
-
-        buttonEditarColaborador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        buttonEditarColaborador.setText("Editar Colaborador");
-        buttonEditarColaborador.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonEditarColaboradorMouseClicked(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Listar");
-
-        buttonListarEquipe.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        buttonListarEquipe.setText("Listar Equipe");
-        buttonListarEquipe.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonListarEquipeMouseClicked(evt);
-            }
-        });
-        buttonListarEquipe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonListarEquipeActionPerformed(evt);
-            }
-        });
-
-        buttonListarColaborador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        buttonListarColaborador.setText("Listar Colaboradores");
-        buttonListarColaborador.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonListarColaboradorMouseClicked(evt);
-            }
-        });
-
-        buttonTarefaC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        buttonTarefaC.setText("Cadastrar Tarefa");
-        buttonTarefaC.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonTarefaCMouseClicked(evt);
-            }
-        });
-        buttonTarefaC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonTarefaCActionPerformed(evt);
-            }
-        });
-
-        ButtonEditarTarefa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        ButtonEditarTarefa.setText("Editar Tarefa");
-        ButtonEditarTarefa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonEditarTarefaMouseClicked(evt);
-            }
-        });
-
-        ButtonListar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        ButtonListar.setText("Listar Tarefas");
-        ButtonListar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonListarMouseClicked(evt);
-            }
-        });
-        ButtonListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonListarActionPerformed(evt);
-            }
-        });
-
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jToggleButton1.setText("Cadastrar Tarefa para Equipe");
-        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jToggleButton1MouseClicked(evt);
-            }
-        });
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout painelMenuLayout = new javax.swing.GroupLayout(painelMenu);
-        painelMenu.setLayout(painelMenuLayout);
-        painelMenuLayout.setHorizontalGroup(
-            painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelMenuLayout.createSequentialGroup()
-                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelMenuLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel1)
-                        .addGap(194, 194, 194)
-                        .addComponent(jLabel2)
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel3))
-                    .addGroup(painelMenuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(buttonCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buttonCadastroEquipe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(buttonTarefaC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(81, 81, 81)
-                        .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buttonEditarEquipe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonEditarColaborador, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                            .addComponent(ButtonEditarTarefa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(69, 69, 69)
-                        .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buttonListarEquipe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonListarColaborador, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                            .addComponent(ButtonListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(73, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonListarEquipe2)
+                            .addComponent(ButtonListar2)
+                            .addComponent(buttonListarColaborador2))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(67, 67, 67)
+                                .addComponent(jLabel12)
+                                .addGap(29, 29, 29)
+                                .addComponent(buttonRemoveTarefa2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(203, 203, 203)
+                                .addComponent(buttonRemoveEquipe2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(203, 203, 203)
+                                .addComponent(buttonRemoveCol2))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonCadastro2)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buttonTarefaC2)
+                                    .addComponent(buttonCadastroEquipe2)
+                                    .addComponent(jToggleButton3))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(108, 108, 108)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(buttonEditarEquipe2)
+                                            .addComponent(ButtonEditarTarefa2)
+                                            .addComponent(buttonEditarColaborador2))))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        painelMenuLayout.setVerticalGroup(
-            painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMenuLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonListarEquipe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buttonCadastro)
-                        .addComponent(buttonEditarEquipe, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonListarColaborador)
-                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buttonCadastroEquipe)
-                        .addComponent(buttonEditarColaborador)))
-                .addGap(18, 18, 18)
-                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonTarefaC)
-                    .addComponent(ButtonEditarTarefa)
-                    .addComponent(ButtonListar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton1)
-                .addGap(221, 221, 221))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(buttonCadastroEquipe2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTarefaC2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jToggleButton3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(buttonEditarEquipe2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonEditarTarefa2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonEditarColaborador2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonCadastro2)
+                .addGap(97, 97, 97)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(buttonRemoveTarefa2)
+                    .addComponent(buttonListarEquipe2)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonRemoveEquipe2)
+                    .addComponent(buttonListarColaborador2))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonRemoveCol2)
+                    .addComponent(ButtonListar2))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         jVoltar.setText("voltar");
@@ -261,9 +218,6 @@ public class GestorJFrame extends javax.swing.JFrame {
         });
         jMenuBar1.add(jVoltar);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -271,117 +225,37 @@ public class GestorJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(painelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(painelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCadastroMouseClicked
-        RegistroColaboradorJPanel rc = new RegistroColaboradorJPanel();
-        painelPrincipal.add(rc, "painelCadastro");
-        this.cl.show(painelPrincipal, "painelCadastro");
-
-
-    }//GEN-LAST:event_buttonCadastroMouseClicked
-
-    private void buttonCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCadastroActionPerformed
-
     private void jVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jVoltarMouseClicked
         this.cl.show(painelPrincipal, "painelMenu");
     }//GEN-LAST:event_jVoltarMouseClicked
 
-    private void buttonCadastroEquipeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCadastroEquipeMouseClicked
+    private void buttonCadastroEquipe2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCadastroEquipe2MouseClicked
         CadastrarEquipeJPanel ce = new CadastrarEquipeJPanel();
-        painelPrincipal.add(ce, "painelCadastroEquipe");
-        this.cl.show(painelPrincipal, "painelCadastroEquipe");
-    }//GEN-LAST:event_buttonCadastroEquipeMouseClicked
+        painelPrincipal.add(ce, "CadastrarEquipeJPanel");
+        this.cl.show(painelPrincipal, "CadastrarEquipeJPanel");
+    }//GEN-LAST:event_buttonCadastroEquipe2MouseClicked
 
-    private void buttonCadastroEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastroEquipeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCadastroEquipeActionPerformed
-
-    private void buttonEditarEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarEquipeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonEditarEquipeActionPerformed
-
-    private void buttonEditarEquipeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditarEquipeMouseClicked
-        AlterarEquipe ae = new AlterarEquipe();
-        painelPrincipal.add(ae, "AlterarEquipe");
-        this.cl.show(painelPrincipal, "AlterarEquipe");
-    }//GEN-LAST:event_buttonEditarEquipeMouseClicked
-
-    private void buttonEditarColaboradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditarColaboradorMouseClicked
-        EditarColaborador ec = new EditarColaborador();
-        painelPrincipal.add(ec, "EditarColaborador");
-        this.cl.show(painelPrincipal, "EditarColaborador");
-    }//GEN-LAST:event_buttonEditarColaboradorMouseClicked
-
-    private void buttonListarEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonListarEquipeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonListarEquipeActionPerformed
-
-    private void buttonListarEquipeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonListarEquipeMouseClicked
-        ListarEquipeJPanel le = new ListarEquipeJPanel();
-        painelPrincipal.add(le, "ListarEquipe");
-        this.cl.show(painelPrincipal, "ListarEquipe");
-    }//GEN-LAST:event_buttonListarEquipeMouseClicked
-
-    private void buttonListarColaboradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonListarColaboradorMouseClicked
-        ListarColaboradorJPanel lc = new ListarColaboradorJPanel();
-        painelPrincipal.add(lc, "ListarColaborador");
-        this.cl.show(painelPrincipal, "ListarColaborador");
-    }//GEN-LAST:event_buttonListarColaboradorMouseClicked
-
-    private void buttonTarefaCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTarefaCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonTarefaCActionPerformed
-
-    private void buttonTarefaCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonTarefaCMouseClicked
-        CadastroTarefas ct = new CadastroTarefas();
-         painelPrincipal.add(ct, "CadastroTarefas");
+    private void buttonTarefaC2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonTarefaC2MouseClicked
+       CadastroTarefas ct = new CadastroTarefas();
+       painelPrincipal.add(ct, "CadastroTarefas");
         this.cl.show(painelPrincipal, "CadastroTarefas");
-    }//GEN-LAST:event_buttonTarefaCMouseClicked
-
-    private void ButtonEditarTarefaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonEditarTarefaMouseClicked
-        EditarTarefa et = new EditarTarefa();
-         painelPrincipal.add(et, "EditarTarefa");
-        this.cl.show(painelPrincipal, "EditarTarefa");
-    }//GEN-LAST:event_ButtonEditarTarefaMouseClicked
-
-    private void ButtonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonListarActionPerformed
-
-    private void ButtonListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonListarMouseClicked
-        ListaTarefas lt = new ListaTarefas();
-        painelPrincipal.add(lt, "ListaTarefas");
-        this.cl.show(painelPrincipal, "ListaTarefas");
-    }//GEN-LAST:event_ButtonListarMouseClicked
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
-        CadastrarTarefaEquipe cte = new CadastrarTarefaEquipe();
-        painelPrincipal.add(cte, "CadastrarTarefaEquipe");
-        this.cl.show(painelPrincipal, "CadastrarTarefaEquipe");
-        
-    }//GEN-LAST:event_jToggleButton1MouseClicked
+    }//GEN-LAST:event_buttonTarefaC2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -420,22 +294,61 @@ public class GestorJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonEditarTarefa;
+    private javax.swing.JButton ButtonEditarTarefa1;
+    private javax.swing.JButton ButtonEditarTarefa2;
     private javax.swing.JToggleButton ButtonListar;
+    private javax.swing.JToggleButton ButtonListar1;
+    private javax.swing.JToggleButton ButtonListar2;
     private javax.swing.JButton buttonCadastro;
+    private javax.swing.JButton buttonCadastro1;
+    private javax.swing.JButton buttonCadastro2;
     private javax.swing.JButton buttonCadastroEquipe;
+    private javax.swing.JButton buttonCadastroEquipe1;
+    private javax.swing.JButton buttonCadastroEquipe2;
     private javax.swing.JButton buttonEditarColaborador;
+    private javax.swing.JButton buttonEditarColaborador1;
+    private javax.swing.JButton buttonEditarColaborador2;
     private javax.swing.JButton buttonEditarEquipe;
+    private javax.swing.JButton buttonEditarEquipe1;
+    private javax.swing.JButton buttonEditarEquipe2;
     private javax.swing.JButton buttonListarColaborador;
+    private javax.swing.JButton buttonListarColaborador1;
+    private javax.swing.JButton buttonListarColaborador2;
     private javax.swing.JButton buttonListarEquipe;
+    private javax.swing.JButton buttonListarEquipe1;
+    private javax.swing.JButton buttonListarEquipe2;
+    private javax.swing.JButton buttonRemoveCol;
+    private javax.swing.JButton buttonRemoveCol1;
+    private javax.swing.JButton buttonRemoveCol2;
+    private javax.swing.JButton buttonRemoveEquipe;
+    private javax.swing.JButton buttonRemoveEquipe1;
+    private javax.swing.JButton buttonRemoveEquipe2;
+    private javax.swing.JButton buttonRemoveTarefa;
+    private javax.swing.JButton buttonRemoveTarefa1;
+    private javax.swing.JButton buttonRemoveTarefa2;
     private javax.swing.JButton buttonTarefaC;
+    private javax.swing.JButton buttonTarefaC1;
+    private javax.swing.JButton buttonTarefaC2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JMenu jVoltar;
     private javax.swing.JPanel painelMenu;
+    private javax.swing.JPanel painelMenu1;
     private javax.swing.JPanel painelPrincipal;
     // End of variables declaration//GEN-END:variables
 }

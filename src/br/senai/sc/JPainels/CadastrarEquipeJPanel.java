@@ -34,26 +34,28 @@ public class CadastrarEquipeJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jNomeEquipe = new javax.swing.JTextField();
+        cpNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jDescricaoEquipe = new javax.swing.JTextArea();
+        cpDes = new javax.swing.JTextArea();
         jSalvar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setText("Nome da equipe");
 
-        jNomeEquipe.addActionListener(new java.awt.event.ActionListener() {
+        cpNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jNomeEquipeActionPerformed(evt);
+                cpNomeActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Descrição");
 
-        jDescricaoEquipe.setColumns(20);
-        jDescricaoEquipe.setRows(5);
-        jScrollPane1.setViewportView(jDescricaoEquipe);
+        cpDes.setColumns(20);
+        cpDes.setRows(5);
+        jScrollPane1.setViewportView(cpDes);
 
         jSalvar.setText("Cadastrar");
         jSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -66,6 +68,9 @@ public class CadastrarEquipeJPanel extends javax.swing.JPanel {
                 jSalvarActionPerformed(evt);
             }
         });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Cadastrar Equipe");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -82,37 +87,43 @@ public class CadastrarEquipeJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jNomeEquipe)
+                    .addComponent(cpNome)
                     .addComponent(jScrollPane1))
                 .addGap(54, 54, 54))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jNomeEquipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cpNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(jSalvar)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jNomeEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNomeEquipeActionPerformed
+    private void cpNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jNomeEquipeActionPerformed
+    }//GEN-LAST:event_cpNomeActionPerformed
 
     private void jSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSalvarMouseClicked
         CadastrarEquipe e = new CadastrarEquipe();
         EquipeDao equipe = new EquipeDao();
 
-        String nome = jNomeEquipe.getText();
-        String descricao = jDescricaoEquipe.getText();
+        String nome = cpNome.getText();
+        String descricao = cpDes.getText();
         
         e.setNome(nome);
         e.setDescricao(descricao);
@@ -134,10 +145,12 @@ public class CadastrarEquipeJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea jDescricaoEquipe;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextArea cpDes;
+    private javax.swing.JTextField cpNome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jNomeEquipe;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jSalvar;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

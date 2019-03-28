@@ -18,7 +18,7 @@ public class CadastrarEquipe {
     }
     
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -26,7 +26,7 @@ public class CadastrarEquipe {
     }
 
     public String getDescricao() {
-        return descricao;
+        return this.descricao;
     }
 
     public void setDescricao(String descricao) {

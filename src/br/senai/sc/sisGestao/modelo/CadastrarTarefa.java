@@ -32,7 +32,7 @@ public class CadastrarTarefa {
     }
 
     public int getCodEq() {
-        return codEq;
+        return this.codEq;
     }
 
     public void setCodEq(int codEq) {
@@ -40,7 +40,7 @@ public class CadastrarTarefa {
     }
 
     public int getCodTarefa() {
-        return codTarefa;
+        return this.codTarefa;
     }
 
     public void setCodTarefa(int codTarefa) {
@@ -56,7 +56,7 @@ public class CadastrarTarefa {
     }
  
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo) {
@@ -64,7 +64,7 @@ public class CadastrarTarefa {
     }
 
     public String getDescricao() {
-        return descricao;
+        return this.descricao;
     }
 
     public void setDescricao(String descricao) {

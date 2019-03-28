@@ -15,12 +15,12 @@ public class EquipeDao extends ConnectionFactory {
 
     public EquipeDao() {
         this.con = this.getConnection();
+        
     }
 
     public void inserir(CadastrarEquipe eq) throws SQLException {
 
-        String sql = "insert into equipe "
-                + "(nome, descricao)"
+        String sql = "insert into equipe(nome, descricao)"
                 + "values (?, ?);";
 
         try (PreparedStatement st = this.con.prepareStatement(sql)) {
@@ -80,7 +80,7 @@ public class EquipeDao extends ConnectionFactory {
 
                 e.setCodEquipe(rs.getInt("codEquipe"));
                 e.setNome(rs.getString("nome"));
-                e.setDescricao(rs.getString("objetivo"));
+                e.setDescricao(rs.getString("descricao"));
                 equipes.add(e);
             }
 

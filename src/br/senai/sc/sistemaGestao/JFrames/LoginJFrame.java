@@ -70,6 +70,11 @@ public class LoginJFrame extends javax.swing.JFrame {
         });
 
         jButton2.setText("Esqueci a senha");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         cpSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,12 +154,11 @@ public class LoginJFrame extends javax.swing.JFrame {
             if (cargo.equals("Gestor") || cargo.equals("gestor")) {
                 GestorJFrame gestor = new GestorJFrame();
                 gestor.setVisible(true);
-            } /*else if(){
-                //Botar a frame do colaborador
-            }else{
-                JOptionPane.showMessageDialog(null, "erro");
+            } else if(cargo.equals("Colaborador")){
+                ColaboradorJFrame colaborador = new ColaboradorJFrame();
+                colaborador.setVisible(true);
             }
-            */
+            
         }
 
     }//GEN-LAST:event_buttonLoginMouseClicked
@@ -169,6 +173,10 @@ public class LoginJFrame extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_buttonRegistrarMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
