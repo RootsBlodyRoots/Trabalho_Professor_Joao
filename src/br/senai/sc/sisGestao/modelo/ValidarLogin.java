@@ -36,9 +36,9 @@ public class ValidarLogin {
 
             if (rs.next()) {
                 valida = true;
-                JOptionPane.showMessageDialog(null, "deu");
+                //JOptionPane.showMessageDialog(null, "deu");
             }else{
-                JOptionPane.showMessageDialog(null, "num deu");
+                //JOptionPane.showMessageDialog(null, "num deu");
             }
             
         } catch (SQLException ex) {

@@ -37,7 +37,6 @@ public class LoginJFrame extends javax.swing.JFrame {
         comboCargo = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         buttonRegistrar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         cpSenha = new javax.swing.JPasswordField();
 
         jLabel5.setText("jLabel5");
@@ -69,13 +68,6 @@ public class LoginJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Esqueci a senha");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-
         cpSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cpSenhaActionPerformed(evt);
@@ -99,7 +91,6 @@ public class LoginJFrame extends javax.swing.JFrame {
                         .addComponent(comboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
@@ -124,9 +115,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addComponent(buttonLogin))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buttonRegistrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
@@ -154,7 +143,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             if (cargo.equals("Gestor") || cargo.equals("gestor")) {
                 GestorJFrame gestor = new GestorJFrame();
                 gestor.setVisible(true);
-            } else if(cargo.equals("Colaborador")){
+            } else{
                 ColaboradorJFrame colaborador = new ColaboradorJFrame();
                 colaborador.setVisible(true);
             }
@@ -173,10 +162,6 @@ public class LoginJFrame extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_buttonRegistrarMouseClicked
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -225,7 +210,6 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox comboCargo;
     private javax.swing.JPasswordField cpSenha;
     private javax.swing.JTextField cpUsuario;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

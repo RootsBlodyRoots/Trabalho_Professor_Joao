@@ -22,6 +22,10 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
 
     public ColaboradorJFrame() {
         initComponents();
+        
+        this.cl = (CardLayout) painelPrincipalCol.getLayout();
+        painelPrincipalCol.add(painelMenuCol, "painelMenuCol");
+        this.cl.show(painelPrincipalCol, "painelMenuCol");
     }
 
     /**
@@ -33,8 +37,7 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        painelPrincipal = new javax.swing.JPanel();
-        painelMenu = new javax.swing.JPanel();
+        painelMenuCol = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         ButtonEditarTarefa = new javax.swing.JButton();
         buttonTarefaC = new javax.swing.JButton();
@@ -47,12 +50,11 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        painelPrincipalCol = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jVoltar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        painelPrincipal.setLayout(new java.awt.CardLayout());
 
         jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jToggleButton1.setText("Cadastrar Tarefa para Equipe");
@@ -121,27 +123,27 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Remover");
 
-        javax.swing.GroupLayout painelMenuLayout = new javax.swing.GroupLayout(painelMenu);
-        painelMenu.setLayout(painelMenuLayout);
-        painelMenuLayout.setHorizontalGroup(
-            painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout painelMenuColLayout = new javax.swing.GroupLayout(painelMenuCol);
+        painelMenuCol.setLayout(painelMenuColLayout);
+        painelMenuColLayout.setHorizontalGroup(
+            painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 552, Short.MAX_VALUE)
-            .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(painelMenuLayout.createSequentialGroup()
+            .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelMenuColLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(painelMenuLayout.createSequentialGroup()
+                        .addGroup(painelMenuColLayout.createSequentialGroup()
                             .addGap(61, 61, 61)
-                            .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel1)
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel4))
                             .addGap(71, 71, 71)
-                            .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(buttonTarefaC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(ButtonListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jToggleButton1)
@@ -151,40 +153,42 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
                         .addComponent(jSeparator3))
                     .addContainerGap()))
         );
-        painelMenuLayout.setVerticalGroup(
-            painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        painelMenuColLayout.setVerticalGroup(
+            painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 301, Short.MAX_VALUE)
-            .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(painelMenuLayout.createSequentialGroup()
+            .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelMenuColLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(painelMenuLayout.createSequentialGroup()
+                    .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(painelMenuColLayout.createSequentialGroup()
                             .addGap(9, 9, 9)
                             .addComponent(jLabel1))
-                        .addGroup(painelMenuLayout.createSequentialGroup()
+                        .addGroup(painelMenuColLayout.createSequentialGroup()
                             .addComponent(buttonTarefaC)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(10, 10, 10)
-                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(ButtonEditarTarefa)
                         .addComponent(jLabel2))
                     .addGap(18, 18, 18)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(14, 14, 14)
-                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ButtonListar))
                     .addGap(37, 37, 37)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelMenuColLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel4)
                         .addComponent(buttonRemoveTarefa))
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
+
+        painelPrincipalCol.setLayout(new java.awt.CardLayout());
 
         jVoltar.setText("voltar");
         jVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -202,24 +206,24 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelPrincipalCol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(painelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(painelMenuCol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelPrincipalCol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(painelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(painelMenuCol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -228,8 +232,8 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
 
     private void buttonTarefaCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonTarefaCMouseClicked
         CadastroTarefas ct = new CadastroTarefas();
-        painelPrincipal.add(ct, "CadastroTarefas");
-        this.cl.show(painelPrincipal, "CadastroTarefas");
+        painelPrincipalCol.add(ct, "CadastroTarefas");
+        this.cl.show(painelPrincipalCol, "CadastroTarefas");
     }//GEN-LAST:event_buttonTarefaCMouseClicked
 
     private void buttonTarefaCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTarefaCActionPerformed
@@ -238,14 +242,14 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
 
     private void ButtonEditarTarefaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonEditarTarefaMouseClicked
         EditarTarefa et = new EditarTarefa();
-        painelPrincipal.add(et, "EditarTarefa");
-        this.cl.show(painelPrincipal, "EditarTarefa");
+        painelPrincipalCol.add(et, "EditarTarefa");
+        this.cl.show(painelPrincipalCol, "EditarTarefa");
     }//GEN-LAST:event_ButtonEditarTarefaMouseClicked
 
     private void ButtonListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonListarMouseClicked
         ListaTarefas lt = new ListaTarefas();
-        painelPrincipal.add(lt, "ListaTarefas");
-        this.cl.show(painelPrincipal, "ListaTarefas");
+        painelPrincipalCol.add(lt, "ListaTarefas");
+        this.cl.show(painelPrincipalCol, "ListaTarefas");
     }//GEN-LAST:event_ButtonListarMouseClicked
 
     private void ButtonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListarActionPerformed
@@ -254,8 +258,8 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
 
     private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
         CadastrarTarefaEquipe cte = new CadastrarTarefaEquipe();
-        painelPrincipal.add(cte, "CadastrarTarefaEquipe");
-        this.cl.show(painelPrincipal, "CadastrarTarefaEquipe");
+        painelPrincipalCol.add(cte, "CadastrarTarefaEquipe");
+        this.cl.show(painelPrincipalCol, "CadastrarTarefaEquipe");
 
     }//GEN-LAST:event_jToggleButton1MouseClicked
 
@@ -265,12 +269,12 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
 
     private void buttonRemoveTarefaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonRemoveTarefaMouseClicked
         RemoverTarefa rt = new RemoverTarefa();
-        painelPrincipal.add(rt, "RemoverTarefa");
-        this.cl.show(painelPrincipal, "RemoverTarefa");
+        painelPrincipalCol.add(rt, "RemoverTarefa");
+        this.cl.show(painelPrincipalCol, "RemoverTarefa");
     }//GEN-LAST:event_buttonRemoveTarefaMouseClicked
 
     private void jVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jVoltarMouseClicked
-        this.cl.show(painelPrincipal, "painelMenu");
+        this.cl.show(painelPrincipalCol, "painelMenuCol");
     }//GEN-LAST:event_jVoltarMouseClicked
 
     /**
@@ -324,7 +328,7 @@ public class ColaboradorJFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JMenu jVoltar;
-    private javax.swing.JPanel painelMenu;
-    private javax.swing.JPanel painelPrincipal;
+    private javax.swing.JPanel painelMenuCol;
+    private javax.swing.JPanel painelPrincipalCol;
     // End of variables declaration//GEN-END:variables
 }
